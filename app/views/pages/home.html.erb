@@ -2,3 +2,22 @@
   <h1>Bienvenido a devMatch</h1>
   <h3>El punto de encuentro entre Inversionistas y Desarroladores.</h3>
 </div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="well">
+      <h2 class="text-center">Membresia Basica</h2>
+      <h4>Registrate gratis y obten acceso basico en la comunidad de desarrolladores que continuamente esta creciendo.</h4>
+      <br>
+      <%= link_to "Registro Basico", new_user_registration_path, class: 'btn btn-primary btn-lg btn-block' %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="well">
+      <h2 class="text-center">Membresia Pro</h2>
+      <h4>Registrate con la membresia Pro por $10 mensual y obten acceso total a la informacion de la comunidad.</h4>
+      <br>
+      <%= link_to "Registro Pro", new_user_registration_path, class: 'btn btn-success btn-lg btn-block' %>
+    </div>
+  </div>
+</div>
