@@ -1,27 +1,47 @@
-<%= link_to "Create your profile!", new_user_profile_path(current_user) if current_user %>
 
 
 <div class="jumbotron text-center">
   <h1>Bienvenido a devMatch</h1>
-  <h3>El punto de encuentro entre Inversionistas y Desarroladores.</h3>
+  <h3>El punto de encuentro entre Inversionistas y Desarrolladores.</h3>
 </div>
 
 <div class="row">
-  <div class="col-md-6">
-    <div class="well">
-      <h2 class="text-center">Membresia Basica</h2>
-      <h4>Registrate gratis y obten acceso basico en la comunidad de desarrolladores que continuamente esta creciendo.</h4>
-      <br>
-      <%= link_to "Registro Basico", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+  <% if user_signed_in? %>
+      <div class="col-md-6">
+       <div class="well">  
+         <h2 class="text-center">La comunidad</h2>
+          <% if current_user.profile %>
+            <%= link_to "Edita tu Perfil", "#", class: 'btn btn-default btn-lg btn-block' %>
+            <%= link_to "Ver Pefil", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+          <% else %>  
+            <%= link_to "Crea tu Pefil!", new_user_profile_path(current_user),class: 'btn btn-default btn-lg btn-block' %>
+          <% end %>  
+       </div> 
+      </div>
+    <div class="col-md-6">
+        <div class="well">
+          <h2 class="text-center">La comunidad</h2>
+          <p class="text-center">Visita la comunidad para conocer otros Desarrolladores, Empresarios e inversionistas.</p>
+          <%= link_to "Ver la Comunidad devMatch", "#", class: 'btn btn-default btn-lg btn-block' %>
+        </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <div class="well">
-      <h2 class="text-center">Membresia Pro</h2>
-      <h4>Registrate con la membresia Pro por $10 mensual y obten acceso total a la informacion de la comunidad.</h4>
-      <br>
-      <!--en el path usamos parametros para pasar la variable pro_plan y su id que es 2-->
-      <%= link_to "Registro Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
-    </div>
-  </div>
+  <% else %>
+      <div class="col-md-6">
+        <div class="well">
+          <h2 class="text-center">Membresia Basica</h2>
+          <h4>Registrate gratis y obten acceso basico en la comunidad de desarrolladores que continuamente esta creciendo.</h4>
+          <br>
+          <%= link_to "Registro Basico", new_user_registration_path(plan: @basic_plan.id), class: 'btn btn-primary btn-lg btn-block' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="well">
+          <h2 class="text-center">Membresia Pro</h2>
+          <h4>Registrate con la membresia Pro por $10 mensual y obten acceso total a la informacion de la comunidad.</h4>
+          <br>
+          <!--en el path usamos parametros para pasar la variable pro_plan y su id que es 2-->
+          <%= link_to "Registro Pro", new_user_registration_path(plan: @pro_plan.id), class: 'btn btn-success btn-lg btn-block' %>
+        </div>
+      </div>
+  <% end %>
 </div>
