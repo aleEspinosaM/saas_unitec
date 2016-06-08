@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  resources :users do
+    resource :profile
+  end
   resources :contacts #para ver todas las rutas bundle exec rake routes
   get '/about' => 'pages#about'
   root 'pages#home'
