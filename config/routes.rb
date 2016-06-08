@@ -3,11 +3,7 @@ Rails.application.routes.draw do
   resources :users do
     resource :profile
   end
-<<<<<<< HEAD
   resources :contacts
-=======
-  resources :contacts #para ver todas las rutas bundle exec rake routes
->>>>>>> 86746d17aa48b1cf33262d781057900c94dd46ae
   get '/about' => 'pages#about'
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

@@ -4,14 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :plan
-<<<<<<< HEAD
   has_one :profile
 
-=======
-  
-  has_one :profile
-  
->>>>>>> 86746d17aa48b1cf33262d781057900c94dd46ae
   attr_accessor :stripe_card_token
   def save_with_payment
     if valid?
