@@ -11,9 +11,10 @@
        <div class="well">  
          <h2 class="text-center">La comunidad</h2>
           <% if current_user.profile %>
-            <%= link_to "Edita tu Perfil", "#", class: 'btn btn-default btn-lg btn-block' %>
+            <%= link_to "Edita tu Perfil", edit_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
             <%= link_to "Ver Pefil", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
           <% else %>  
+            <p>Crea tu perfil para que la comunidad pueda saber sobre ti</p>
             <%= link_to "Crea tu Pefil!", new_user_profile_path(current_user),class: 'btn btn-default btn-lg btn-block' %>
           <% end %>  
        </div> 
