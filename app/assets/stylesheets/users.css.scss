@@ -1,9 +1,14 @@
 #imagen-avatar {
-    border-radius: 50px;
+    border-radius: 50%;
     -webkit-box-shadow: 0px 10px 29px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 29px -1px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 29px -1px rgba(0,0,0,0.75);
     border:2px solid white;
+    height: 128px;
+    width: 128px;
+}
+.user-index-avatar{
+    border-radius: 50%;
 }
 .job-title-icon {
     display: inline-block;
@@ -23,6 +28,7 @@
     }    
 }
 
+
 .well.profile-description {
     background-color: #397263;
     border-color: #A6D8AF;
@@ -34,4 +40,9 @@
     background-color: #1c74c7;
     border-color: #91c8fc;
     border-radius: 10px;
+}
+
+
+.well.white-bg {
+    background-color: #fff;
 }
